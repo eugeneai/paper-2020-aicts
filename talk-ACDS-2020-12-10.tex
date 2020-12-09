@@ -23,8 +23,8 @@
     pdfmenubar=false,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Model Driven Architecture Implementation using Linked Data},    % title
-    pdfauthor={Evgeny Cherkashin, Alexey Kopaygorodsky, Ljubica Kazi, Alexey Shigarov, Viacheslav Paramonov},     % author
+    pdftitle={Construction techniques of Baikal microbiome research information-computational environment},    % title
+    pdfauthor={Evgeny Cherkashin, Alexey Shigarov, Vasily Khristyuk},     % author
     pdfsubject={model driven architecture},   % subject of the document
     pdfnewwindow=true,      % links in new PDF window
     colorlinks=true,       % false: boxed links; true: colored links
@@ -96,8 +96,7 @@
 \setbeamertemplate{background canvas}[vertical shading][bottom=white,top=white]
 \setbeamercolor{background canvas}{bg=white}
 
-\title{Construction techniques of Baikal microbiome
-research information-computational environment}
+\title{Construction techniques of Baikal microbiome research information-computational environment}
 \author[E.~Cherkashin, A.~Shigarov, V.~Khristyuk]{\bfseries%
   \underline{Evgeny Cherkashin}, Alexey Shigarov, Vasily Khristyuk}
 \institute{\normalsize Matrosov Institute for System Dynamics and Control Theory, \\ SB RAS, Irkutsk, Russia\\
@@ -119,7 +118,7 @@ AICTS--2020, Irkutsk, Russia
 \end{frame}
 
 \begin{frame}
-  \frametitle{Microbiome study aims}
+  \frametitle{Microbiome study}
   \centering
   \includegraphics[width=\linewidth]{microbiome-study.png}
 \end{frame}
@@ -155,7 +154,7 @@ AICTS--2020, Irkutsk, Russia
   \item Classify sequences with respect to existing taxa hierarchy. Get \textbf{OTU}s.
   \end{enumerate}
 
-  After these stages a large number of OTU\footnote{Operation Taxonomic Unit} classified has been obtained.
+  After these stages around 1000 OTU\footnote{Operation Taxonomic Unit} has been obtained.
 
 \end{frame}
 
@@ -268,7 +267,7 @@ The taxonomy is build using unique sequences as a comparison basis. \\[2em]
              &  and execution
       \end{tabular}
       ${}$\\[1em]
-      Green blocks are Mothur modules. Others are Rapidminer modules.
+      Green blocks are Mothur modules. Others are Rapidminer Studio modules.
     \end{column}
   \end{columns}
 \end{frame}
@@ -484,7 +483,7 @@ echo 'make.contigs(
   \begin{itemize}
   \item Friend-of-a-friend (\textbf{foaf}) for agent information: individuals, legal entities, program agents.
   \item Provenance (\textbf{prov}) for making references between documents.
-  \item Dublin Core (\textbf{dc}) for published resources metadata mark up.
+  \item Dublin Core (\textbf{dc}) for published resource metadata mark up.
   \item DBPedia resource (\textbf{dbr}) to refer external classes and instance objects.
   \item Schema.org (\textbf{schema}) for Google, Yandex, Yahoo, \emph{etc}. searchable objects, structural elements.
   \item The Bibliographic Ontology (\textbf{bibo}) used for literature reference mark up.
