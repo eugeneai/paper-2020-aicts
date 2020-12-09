@@ -3,7 +3,7 @@
 LATEXMK=latexmk -lualatex -latexoption=-shell-escape
 TARGET=cherkashin-proposal-aicds
 
-TLK=talk-ACDS-2020-12-08
+TLK=talk-ACDS-2020-12-10
 
 run: $(TARGET).pdf
 
