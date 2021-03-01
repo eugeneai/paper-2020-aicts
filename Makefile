@@ -1,7 +1,8 @@
 .PHONY: clean run show view
 
 LATEXMK=latexmk -lualatex -latexoption=-shell-escape
-TARGET=cherkashin-proposal-aicds
+# TARGET=cherkashin-proposal-aicds
+TARGET=cherkashin-final-aicts
 
 TLK=talk-ACDS-2020-12-10
 
