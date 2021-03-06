@@ -278,7 +278,26 @@ To allow a casual user to take advantage of the obtained results, they are to be
 
 The LOD service and the desired flexibility of scientific research software require us to associate metadata to all pieces of NGS data.  The metadata is stored for the main input data of MiSeq SOP and transformed with each application of commands into metadata describing command output objects.  For Mothur, we construct an automatic metadata inference rules analyzing its C++ source and filename conversion algorithms.  To conserve memory usage we decided to implement dynamic metadata reconstruction when DaaS returns queried objects.  For example, as thousands of sequences are organized in files, groups and OTUs, the metadata of the sequences are extended with all file/group/OUT metadata. Each sequence metadata is generated using the context of its storage, namely \verb|fasta|--file name and relation to its group, its file provenance, \emph{etc.}
 
-\section{Further development}
+\section{Evaluation}\label{sec:eval}
+
+We have evaluated the implemented technologies on the criteria of expressiveness of the RDF source models (CIM, PIM, and PSM) representation, LogTalk programming capabilities of the transformation scenarios, and
+representation of the MiSeq SOP with the synthesized Rapidminer plug-in. The following results are obtained.
+
+[[RDF expressiveness]]
+
+Analysis of Galaxy implementation of the Mothur's MiSeq SOP .... We have spent about two days for converting it into RDF, resulting in more expressive representation of current 138 of 144 Mothur modules.  The representation in the form of knowledge graphs of the source model data allows us mixing various model data source in one representation and select with SPARQL or LogTalk queries the combinations, which are interpreted in the transformation as a semantically meaningful structures.  % So the set of RDF triples are
+
+[[LogTalk capability]]
+
+and the process of adaptation of the Galaxy representation of Mothur modules,
+
+[[Testing on the existing investigations]]
+
+As we said before, as testing ground we used the source limnological data of~\cite{mik19}.  At first stage we repeated the investigation procedure manually to grasp better understanding of the MiSeq SOP.\@  After each refinement of the transformational knowledge base, we construct the procedure out of dataflow modules, generating scripts, which are executed and their results are compared to manually obtained ones.  Some stages of Mothur MiSeq SOP contain algorithms employing subsampling, so .....
+
+A similar technique will be used in evaluation of the generated procedures in the Galaxy environment.  The constructed dataflow diagram will be converted into a Galaxy notebook, executed and the results are evaluated against to the manually constructed procedure.  At the last stage of the refinement the power and casual users will be engaged to collect their opinions on the degree of convenience of the environment usage.
+
+\section{Further development}\label{sec:further}
 
 To date, we developed means for MiSeq SOP modeling with dataflow diagrams in Rapidminer studio, execution of the models as creating scripts in the Mothur scripting language, together with MDA instrumentation support. The main problem to be solved in the future is as follows.
 \begin{itemize}
@@ -338,6 +357,8 @@ The target modular software architecture is presented in figure~\ref{fig:metadat
 The approach to the construction of an infrastructure for supporting Lake Baikal microbiome research based on Next Generation Sequencing is proposed. A good background of algorithms and software already constructed by various developers allows us to implement our environment utilizing adaptation of the techniques used by biologists to the background.  To do so, we constructed a dataflow model of the technique (MiSeq implemented by Mothur package), which is to be converted to the software modules of various visual environments and cloud services.  The conversion is implemented using Model Driven Architecture, where model transformation is implemented as a logical inference system. This allows us rapidly transit from one implementation platform to another conserving gained and formalized experience.
 
 At this stage, we limited our implementation with Mothur software specifics, but at the same time do not bother with data conversion.  This will be relevant if we transit to an analogous software for the NGS data processing platform.  The next stage will deal with data conversion to other NGS processing software such as open-source QIIME2 and proprietary one like Usearch.  These platforms have advantages over Mothur in data visualization and processing performance on special operations, as well as application of other methods and algorithms not included in Mothur. The NGS SaaS services~\cite{guo16,kwon15} could also be integrated into the cloud under development.  Such an advantage will supply the better ground for carrying on experiments with data.
+
+[[Baikal sophistication is to support monitoring ...]]  In this case, the standard NGS procedures constructed out of operation applications must be extended with toolsets supporting user-friendly joining the previous stages of a continuous research.  The infrastructure must support integral data representation and efficient query-based semantically rich access.  As we can see from our review, most realized techniques in the NGS data processing are either fixed uni-problem oriented software with \emph{ad-hoc} infrastructures, or just a problem-oriented packages comprising sets of individual operations.  [[flexibility is the main point of interest]].
 
 The problem set to be solved includes optimization of the utilization of cluster computing resources, planning parallel computing executions based on process structure analysis and the properties of algorithms that implement specific operations, and implementation of the control points for services.
 
