@@ -282,21 +282,17 @@ The LOD service and the desired flexibility of scientific research software requ
 
 We have been evaluating the implemented technologies on the criteria of expressiveness of the RDF source models (CIM, PIM, and PSM) representation, LogTalk programming capabilities of the transformation scenarios, and representation of the MiSeq SOP with the synthesized Rapidminer plug-in. The following results are obtained.
 
-RDF technologies and their extension Knowledge Graphs are universal way of describing data, basic relations between notions and model structures.  The last procedure we have done was the analysis of Galaxy implementation of the Mothur's MiSeq SOP.  We have spent about two days for converting it into RDF, resulting in more expressive representation of current 138 of 144 Mothur modules.  The representation in the form of knowledge graphs of the source model data allows us mixing various model data sources in one representation and select model elements with SPARQL and Prolog queries, which are interpreted in the transformation as a semantically meaningful target structures.  % So the set of RDF triples are
+Semantic web technologies and knowledge graphs are universal way of describing data, basic relations between notions and model structures.  The last procedure we have done was the analysis of Galaxy implementation of the Mothur's MiSeq SOP.  We have spent about two days for converting it into RDF, resulting in more expressive representation of current 138 of 144 Mothur modules.  The representation in the form of knowledge graphs of the source model data allows us aggregate various model data sources in one representation and select model elements with SPARQL and Prolog queries, which are interpreted in the transformation as a semantically meaningful target structures.  % So the set of RDF triples are
 
-[[LogTalk capability]]
+The Logtalk language has various structures, which allow programmer to express the transformational knowledge base with objects, providing tools for knowledge manipulation in the object-oriented way.  The general scenario of the transformation is represented as a system of interconnected objects, encapsulating knowledge.  Some of the objects organize facades for SPARQL and Prolog queries to the graph data, other generate target PSM structures and the source code.  All the necessary structures of MDA were representable, as well as there is a number of Logtalk syntactic structures, whish are to be investigated in sense of their applicability for knowledge representation.
 
-and the process of adaptation of the Galaxy representation of Mothur modules,
+As we said before, as testing ground we used the source limnological data of~\cite{mik19}.  At first stage we repeated the investigation procedure manually to grasp better understanding of the MiSeq SOP.\@  After each refinement of the transformational knowledge base, we construct the procedure out of dataflow modules, generating scripts, which are executed and their results are compared to manually obtained ones.  Some stages of Mothur MiSeq SOP contain algorithms employing subsampling, so the final results differ between runs.
 
-[[Testing on the existing investigations]]
-
-As we said before, as testing ground we used the source limnological data of~\cite{mik19}.  At first stage we repeated the investigation procedure manually to grasp better understanding of the MiSeq SOP.\@  After each refinement of the transformational knowledge base, we construct the procedure out of dataflow modules, generating scripts, which are executed and their results are compared to manually obtained ones.  Some stages of Mothur MiSeq SOP contain algorithms employing subsampling, so .....
-
-A similar technique will be used in evaluation of the generated procedures in the Galaxy environment.  The constructed dataflow diagram will be converted into a Galaxy notebook, executed and the results are evaluated against to the manually constructed procedure.  At the last stage of the refinement the power and casual users will be engaged to collect their opinions on the degree of convenience of the environment usage.
+A similar technique will be used in evaluation of the generated procedures in the Galaxy environment.  The constructed dataflow diagram will be converted into a Galaxy notebook, executed and the results are evaluated against to the manually constructed procedure.  At the last stage of the refinement, the power and casual users will be engaged to collect their opinions on the degree of convenience of the environment usage.
 
 \section{Further development}\label{sec:further}
 
-To date, we developed means for MiSeq SOP modeling with dataflow diagrams in Rapidminer studio, execution of the models as creating scripts in the Mothur scripting language, together with MDA instrumentation support. The main problem to be solved in the future is as follows.
+At this point, we developed means for MiSeq SOP modeling with dataflow diagrams in Rapidminer studio, execution of the models as creating scripts in the Mothur scripting language, together with MDA instrumentation support. The main problem to be solved in the future is as follows.
 \begin{itemize}
 \item Development of a converter of the models into Galaxy scenarios,
 \item Integrate data storage with Galaxy data import subsystem,
